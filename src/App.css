@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+.mainTable {
+  border-radius: 10%;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+th {
+
+  background-color: darkgrey;
+  text-align: left;
+  font-family: 'Lucida Sans';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tableDiv {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: thin solid;
+  border-color: lightgray;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+tr {
+  border: thin solid;
+  border-color: lightgray;
+}
+
+iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+
+}
+
+.frames {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.clickThing {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.banner {
+  display: flex;
+  background-color: #bbdbee;
+  box-shadow: black;
+}
+
+.instructions {
+  font-family: 'Lucida Sans';
+
+}
+
+.searchbar {
+  margin-left: auto;
+  width: 25%;
+}
+
+td {
+  border: thin solid;
+  border-color: lightgray;
+}
+
+.darkToggle {
+  height: auto;
+  width: 50px;
+  cursor: pointer;
 }
