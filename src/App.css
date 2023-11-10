@@ -43,7 +43,8 @@ iframe {
 .banner {
   display: flex;
   background-color: #bbdbee;
-  box-shadow: black;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+
 }
 
 .instructions {
@@ -54,6 +55,7 @@ iframe {
 .searchbar {
   margin-left: auto;
   width: 25%;
+  box-shadow: inset;
 }
 
 td {
@@ -65,4 +67,6 @@ td {
   height: auto;
   width: 50px;
   cursor: pointer;
+  box-shadow: inset;
+  background-color: black;
 }

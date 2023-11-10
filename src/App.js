@@ -1,11 +1,14 @@
-import './App.css';
-import React, {useState, useEffect} from 'react';
+import './App.css'; // imports stylesheets
+import React, {useState, useEffect} from 'react'; // imports states and effects
 
+// original songlist
 let ogSonglist  = []
 
+// songs to be displayed
 let songs = ogSonglist
 
 function App() {
+  // states for input data
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredSongs, setFilteredSongs] = useState(songs);
   const [changeSong, setChangeSong] = useState('')
@@ -14,8 +17,10 @@ function App() {
   const [changeYear, setChangeYear] = useState('')
   const [changeGenre, setChangeGenre] = useState('')
 
+  // is dark mode on?
   let lights = true
 
+  // effect for the search
   useEffect(() => {
     let filteredSongs = ogSonglist.filter(
       (song) => 
@@ -23,21 +28,19 @@ function App() {
           song.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
           song.album.toLowerCase().includes(searchTerm.toLowerCase()) ||
           song.year.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          song.genre.toLowerCase().includes(searchTerm.toLowerCase())
-        
-      
-      
+          song.genre.toLowerCase().includes(searchTerm.toLowerCase())     
     )
     if (searchTerm == '') {
       filteredSongs = ogSonglist;
     }
 
+    // displays the filtered songs, puting them into the song array
     setFilteredSongs(filteredSongs);
     songs = filteredSongs
   }, [searchTerm])
 
 
-
+  // toggles dark and light mode
   const lightsOff = () => {
     if (lights) {
       document.body.style.backgroundColor = 'black'
@@ -54,12 +57,13 @@ function App() {
     }
   }
 
+  // adds a new song to the original song list
   const newSong = () => {
     ogSonglist.push({artist: changeArtist, song: changeSong, album: changeAlbum, year: changeYear, genre: changeGenre, rating: ''})
     songs = ogSonglist
   }
 
-
+  // return function
   return (
     <div id="main">
       <div class="banner" id="banner">
@@ -128,3 +132,4 @@ function App() {
 }
 
 export default App;
+
