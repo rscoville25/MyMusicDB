@@ -1,8 +1,15 @@
 import './App.css'; // imports stylesheets
 import React, {useState, useEffect} from 'react'; // imports states and effects
 
+
 // original songlist
 let ogSonglist  = []
+let getSongs = localStorage.getItem('testing')
+ogSonglist = JSON.parse(getSongs)
+
+  
+
+
 
 // songs to be displayed
 let songs = ogSonglist
@@ -61,6 +68,12 @@ function App() {
   const newSong = () => {
     ogSonglist.push({artist: changeArtist, song: changeSong, album: changeAlbum, year: changeYear, genre: changeGenre, rating: ''})
     songs = ogSonglist
+  }
+
+  const saveData = () => {    
+    let arrayStr = JSON.stringify(ogSonglist)
+    localStorage.setItem('testing', arrayStr)
+
   }
 
   // return function
@@ -122,7 +135,7 @@ function App() {
             </tr>
           </tbody>
         </table>
-        <button>Save Data</button>
+        <button id='test' onClick={saveData}>Save Data</button>
       </div>
       <div class="frames">
         <iframe id="wikiFrame" src="https://en.wikipedia.org" width={620} height={480}></iframe>
