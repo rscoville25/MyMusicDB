@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .mainTable {
   border-radius: 10%;
   width: 100%;
@@ -69,4 +73,23 @@ td {
   cursor: pointer;
   box-shadow: inset;
   background-color: black;
+}
+
+.stats {
+  text-align: center;
+  font-family: 'Lucida Sans';
+}
+
+.instructions {
+  padding-right: 24px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.save {
+  cursor: pointer;
+  text-align: center;
+  font-family: monospace;
 }
